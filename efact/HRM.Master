@@ -1,0 +1,219 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HRM.master.cs" Inherits="efact.HRM" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<!DOCTYPE html>
+<link href="Content/Site.css" rel="stylesheet" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <div id="header_wrapper">
+        <div id="header">
+            <asp:ContentPlaceHolder ID="head" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+</head>
+<body>
+    <script type="text/javascript">
+        //<!--
+        function onClientContextMenuShowing(sender, args) {
+            var treeNode = args.get_node();
+            treeNode.set_selected(true);
+            //enable/disable menu items
+            setMenuItemsState(args.get_menu().get_items(), treeNode);
+        }
+
+        function onClientContextMenuItemClicking(sender, args) {
+            var menuItem = args.get_menuItem();
+            var treeNode = args.get_node();
+            menuItem.get_menu().hide();
+
+            switch (menuItem.get_value()) {
+                case "Copy":
+                    break;
+                case "Rename":
+                    treeNode.startEdit();
+                    break;
+                case "NewFolder":
+                    break;
+                case "MarkAsRead":
+                    break;
+                case "Delete":
+                    var result = confirm("Are you sure you want to delete the item: " + treeNode.get_text());
+                    args.set_cancel(!result);
+                    break;
+            }
+        }
+
+        //this method disables the appropriate context menu items
+        function setMenuItemsState(menuItems, treeNode) {
+            for (var i = 0; i < menuItems.get_count() ; i++) {
+                var menuItem = menuItems.getItem(i);
+                switch (menuItem.get_value()) {
+                    case "Copy":
+                        formatMenuItem(menuItem, treeNode, 'Copy "{0}"');
+                        break;
+                    case "Rename":
+                        formatMenuItem(menuItem, treeNode, 'Rename "{0}"');
+                        break;
+                    case "Delete":
+                        formatMenuItem(menuItem, treeNode, 'Delete "{0}"');
+                        break;
+                    case "NewFolder":
+                        if (treeNode.get_parent() == treeNode.get_treeView()) {
+                            menuItem.set_enabled(false);
+                        }
+                        else {
+                            menuItem.set_enabled(true);
+                        }
+                        break;
+                    case "MarkAsRead":
+                        var enabled = hasNodeMails(treeNode);
+                        menuItem.set_enabled(enabled != null);
+                        break;
+                }
+            }
+        }
+
+        //formats the Text of the menu item
+        function formatMenuItem(menuItem, treeNode, formatString) {
+            var nodeValue = treeNode.get_value();
+            if (nodeValue && nodeValue.indexOf("_Private_") == 0) {
+                menuItem.set_enabled(false);
+            }
+            else {
+                menuItem.set_enabled(true);
+            }
+            var newText = String.format(formatString, extractTitleWithoutMails(treeNode));
+            menuItem.set_text(newText);
+        }
+
+        //checks if the text contains (digit)
+        function hasNodeMails(treeNode) {
+            return treeNode.get_text().match(/\([\d]+\)/ig);
+        }
+
+        //removes the brackets with the numbers,e.g. Inbox (30)
+        function extractTitleWithoutMails(treeNode) {
+            return treeNode.get_text().replace(/\s*\([\d]+\)\s*/ig, "");
+        }
+        //-->
+    </script>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div id="main_wrapper">
+            <div id="main">
+                <div style="text-align: right">
+                    <asp:Label runat="server" ID="WelcomeNote" />
+                    <asp:Label runat="server" ID="Seperator" Text="    |   " />
+                    <asp:LinkButton ID="logout" runat="server" OnClick="logout_Click">Logout</asp:LinkButton>
+                </div>
+                <div>
+                    <telerik:RadAjaxPanel ID="RadAjaxPanel1" runat="server" LoadingPanelID="RadAjaxLoadingPanel1">
+                        <telerik:RadTreeView ID="RadTreeView1" runat="server" AllowNodeEditing="True"
+                            OnClientContextMenuItemClicking="onClientContextMenuItemClicking" OnClientContextMenuShowing="onClientContextMenuShowing">
+                          <%--  <ContextMenus>
+                                <telerik:RadTreeViewContextMenu ID="MainContextMenu" runat="server">
+                                    <Items>
+                                        <telerik:RadMenuItem Value="Copy" Text="Copy ...">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem Value="Rename" Text="Rename ..." Enabled="false"
+                                            PostBack="false">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem Value="NewFolder" Text="New Folder">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem Value="Delete" Text="Delete Folder">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem IsSeparator="true">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem Value="MarkAsRead" Text="Mark All as Read">
+                                        </telerik:RadMenuItem>
+                                    </Items>
+                                    <CollapseAnimation Type="none"></CollapseAnimation>
+                                </telerik:RadTreeViewContextMenu>
+                                <telerik:RadTreeViewContextMenu ID="EmptyFolderContextMenu" runat="server">
+                                    <Items>
+                                        <telerik:RadMenuItem Value="NewFolder" Text="New Folder" ImageUrl="~/TreeView/Img/Outlook/12.gif">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem IsSeparator="true">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem Value="EmptyFolder" Text="Empty this folder" ImageUrl="~/TreeView/Img/Outlook/2DeletedItems.gif">
+                                        </telerik:RadMenuItem>
+                                    </Items>
+                                    <CollapseAnimation Type="none"></CollapseAnimation>
+                                </telerik:RadTreeViewContextMenu>
+                            </ContextMenus>--%>
+                            <Nodes>
+                                <telerik:RadTreeNode
+                                    AllowEdit="false" Text="Today">
+                                    <Nodes>
+                                        <telerik:RadTreeNode
+                                            AllowEdit="false" Text="Leave Registration" ContextMenuID="EmptyFolderContextMenu">
+                                        </telerik:RadTreeNode>
+                                        <telerik:RadTreeNode
+                                            AllowEdit="false" Text="Overtime Reporting">
+                                        </telerik:RadTreeNode>
+                                        <telerik:RadTreeNode
+                                            AllowEdit="false" Text="Sick Reporting" ContextMenuID="EmptyFolderContextMenu">
+                                        </telerik:RadTreeNode>
+                                    </Nodes>
+                                </telerik:RadTreeNode>
+                                <telerik:RadTreeNode runat="server" Text="Organization">
+                                    <Nodes>
+                                        <telerik:RadTreeNode runat="server" Text="Management">
+                                        </telerik:RadTreeNode>
+                                        <telerik:RadTreeNode runat="server" Text="Organization Chart">
+                                        </telerik:RadTreeNode>
+                                    </Nodes>
+                                </telerik:RadTreeNode>
+                                <telerik:RadTreeNode runat="server" Text="Staff">
+                                    <Nodes>
+                                        <telerik:RadTreeNode runat="server" Text="Employment Details">
+                                        </telerik:RadTreeNode>
+                                        <telerik:RadTreeNode runat="server" Text="Employee Assessment">
+                                        </telerik:RadTreeNode>
+                                        <telerik:RadTreeNode runat="server" Text="Employee Leaves">
+                                        </telerik:RadTreeNode>
+                                        <telerik:RadTreeNode runat="server" Text="Employee Overtime">
+                                        </telerik:RadTreeNode>
+                                        <telerik:RadTreeNode runat="server" Text="Loan &amp; Advances">
+                                        </telerik:RadTreeNode>
+                                    </Nodes>
+                                </telerik:RadTreeNode>
+                                <telerik:RadTreeNode runat="server" Text="Staff Statistics">
+                                    <Nodes>
+                                        <telerik:RadTreeNode runat="server" Text="Employees List">
+                                        </telerik:RadTreeNode>
+                                        <telerik:RadTreeNode runat="server" Text="Employee Details">
+                                        </telerik:RadTreeNode>
+                                    </Nodes>
+                                </telerik:RadTreeNode>
+                                <telerik:RadTreeNode runat="server" Text="Maintenance">
+                                    <Nodes>
+                                        <telerik:RadTreeNode runat="server" Text="General Definitions">
+                                        </telerik:RadTreeNode>
+                                        <telerik:RadTreeNode runat="server" Text="Staff Definitions">
+                                        </telerik:RadTreeNode>
+                                    </Nodes>
+                                </telerik:RadTreeNode>
+                            </Nodes>
+                        </telerik:RadTreeView>
+                    </telerik:RadAjaxPanel>
+                </div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+
+        <div>
+        </div>
+
+        <footer id="footer_wrapper">
+            <div id="footer" style="float: right">
+                &copy efact | Proinsieme B.V. The Netherlands | 2013 All rights Reserved
+            </div>
+        </footer>
+
+    </form>
+</body>
+</html>

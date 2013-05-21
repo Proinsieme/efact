@@ -1,0 +1,423 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    color: #555;
+    font-size: 12px;
+    line-height: 1.6em;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    background-color: #c7c8c1;
+    background-image: url(../images/background.png);
+    background-repeat: repeat;
+}
+
+#header_wrapper {
+    width: 100%;
+    background: url('../Images/header.png') no-repeat center bottom;
+}
+
+#header {
+    width: 820px;
+    min-height: 20px;
+    padding: 15px 15px 15px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#main_wrapper {
+    width: 100%;
+    /*background: url('../Images/wrapper.png') no-repeat center top;*/
+}
+
+#main {
+    width: 820px;
+    margin: 0 auto;
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+#footer_wrapper {
+    width: 100%;
+    background: url('../Images/footer.png') no-repeat center top;
+}
+
+#footer {
+    width: 780px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    text-align: center;
+}
+
+header, footer, hgroup,
+nav, section {
+    display: block;
+}
+
+ol {
+    counter-reset: item;
+    list-style-type: none;
+    padding-left: 150px;
+}
+
+li {
+    display: block;
+}
+/*li:before { 
+    content: counter(item) "  "; 
+    counter-increment: item 
+}*/
+
+
+/* forms */
+/*fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+    fieldset legend {
+        display: none;
+    }
+
+    fieldset ol {
+        padding: 0;
+        list-style: none;
+    }
+
+        fieldset ol li {
+            padding-bottom: 5px;
+        }*/
+
+
+label {
+    /*display: block;*/
+    font-size: 1.2em;
+    width: 250px;
+    /*font-weight: 600;*/
+}
+
+.logo {
+    /*width:50px;
+    height:150px;*/
+    text-align: center;
+    margin-top: 0px;
+    background-color: transparent;
+}
+
+/*input[type="submit"],
+input[type="button"],*/
+.button {
+    background-color: #e5e5e2;
+    border: 1px solid #787878;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 7px;
+    margin-right: 8px;
+    width: auto;
+}
+
+.validation-summary-errors {
+    color: #e80c4d;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/*td input[type="submit"],
+td input[type="button"],
+td button {
+    font-size: 1em;
+    padding: 4px;
+    margin-right: 4px;
+}*/
+
+
+.tableClass, .tableClass td {
+    border-collapse: collapse;
+    border: solid 1px #ccc;
+    vertical-align: top;
+    padding: 20px;
+}
+
+    .tableClass strong {
+        display: inline-block;
+        padding: 4px;
+        font-size: 11px;
+    }
+
+.Appointment {
+    _ackground: #DFEEFF none repeat scroll 0 0;
+    background: #DFEEFF url(./Img/Appointment.png) center no-repeat;
+    border-color: #F6FAFF -moz-use-text-color #A7C0DF;
+    border-style: solid none;
+    border-width: 1px 0;
+}
+
+moduleContent {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    float: left;
+}
+
+moduleImg {
+    padding: 40px;
+    width: 100px;
+    height: 100px;
+    float: left;
+    position: absolute;
+}
+
+#moduleContent1 {
+    padding: 40px;
+    background-image: url('../Images/Modules/Human Resource.png');
+    background-repeat: no-repeat;
+}
+
+#div1 {
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+
+#Div0 {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    float: left;
+    padding: 10px;
+    background-image: url('../Images/Modules/Human Resource.png');
+}
+
+#moduleContentContainer {
+    flex-align: center;
+    margin: 50px;
+    background-color: aquamarine;
+}
+
+.section {
+    position: relative;
+    float: left;
+    padding: 5px;
+    margin-left:30px;
+    width: 780px;
+    height: 520px;
+    /*margin-right: 20px;*/
+    
+}
+
+
+#module_menu {
+    /*margin: 0px;
+    
+    list-style: none;*/
+    margin: 0px;
+    margin-left:40px;
+}
+
+    #module_menu li {
+        display: block;
+        float: left;
+        width: 140px;
+        height: 160px;
+        margin: 0 20px 20px 0;
+        background: url(../images/menu_box.png) no-repeat;
+        text-align:center;
+    }
+
+        #module_menu li.no_margin_right {
+            margin-right: 0;
+        }
+
+        #module_menu li a {
+            display: block;
+            width: 120px;
+            height: 38px;
+            padding: 120px 10px 0px;
+            background-repeat: no-repeat;
+            background-position: 5px 5px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 13px;
+            color: #fff;
+        }
+
+            #module_menu li a:hover {
+                text-shadow: 2px 2px 2px #555;
+                text-decoration: none;
+            }
+
+            #module_menu li a.humanResource {
+                background-image: url('../Images/Modules/Human Resource.png');
+                background-repeat: no-repeat;
+                width: 120px;
+                height: 32px;
+                padding-top: 125px;
+            }
+
+            #module_menu li a.budget {
+                background-image: url('../Images/Modules/Budget.png');
+                background-repeat: no-repeat;
+                width: 120px;
+                height: 30px;
+                padding-top: 125px;
+            }
+
+            #module_menu li a.invoice {
+                background-image: url('../Images/Modules/Creditor Invoice Processing.png');
+                background-repeat: no-repeat;
+                width: 120px;
+                height: 30px;
+                padding-top: 125px;
+            }
+
+            #module_menu li a.expense {
+                background-image: url('../Images/Modules/Expense Processing.png');
+                background-repeat: no-repeat;
+                width: 120px;
+                height: 30px;
+                padding-top: 125px;
+            }
+
+            #module_menu li a.suppliers {
+                background-image: url('../Images/Modules/Suppliers.png');
+                background-repeat: no-repeat;
+                width: 120px;
+                height: 30px;
+                padding-top: 125px;
+            }
+
+            #module_menu li a.security {
+                background-image: url('../Images/Modules/Security Management.png');
+                background-repeat: no-repeat;
+                width: 120px;
+                height: 30px;
+                padding-top: 125px;
+            }
+
+            #module_menu li a.instructions {
+                background-image: url('../Images/Modules/Standing Instructions.png');
+                background-repeat: no-repeat;
+                width: 120px;
+                height: 30px;
+                padding-top: 125px;
+            }
+
+            #module_menu li a.timeManagement {
+                background-image: url('../Images/Modules/Time Management.png');
+                background-repeat: no-repeat;
+                width: 120px;
+                height: 30px;
+                padding-top: 125px;
+            }
+
+            #module_menu li a.Approval {
+                background-image: url('../Images/Modules/Transaction Approval.png');
+                background-repeat: no-repeat;
+                width: 120px;
+                height: 30px;
+                padding-top: 125px;
+            }
+
+            #module_menu li a.asset {
+                background-image: url('../Images/Modules/Fixed Assets.png');
+                background-repeat: no-repeat;
+                width: 120px;
+                height: 30px;
+                padding-top: 125px;
+            }
+
+/* HR Module Tags */
+
+.hrContentContainer .hrContentBlock, .hrSlideBar .hrMainBar {
+    border-color:violet;
+	margin:0;
+	padding:0;
+}
+
+.hrContentContainer {
+	padding:0;
+	margin:0 auto;
+	width:923px;
+}
+.hrMainBar {
+	margin:0;
+	padding:0;
+	float:right;
+	width:763px;
+    margin-top:20px;
+}
+.hrSlideBar { /* Width : 923 */
+	padding:0;
+	float:left;
+	/*width:285px;*/
+    width:160px;
+    margin-top:20px;
+    color:darkblue;
+}
+
+.hrSlideBar .gadget {
+	margin:0;
+	padding:10px 15px 10px 0;
+}
+.hrSlideBar .gadget .testi {
+	padding:0 0 0 0;
+}
+.hrSlideBar .gadget .title {
+	text-align:right;
+}
+.hrSlideBar .gadget span.q {
+	text-align:right;
+	font:normal 60px/12px Arial, Helvetica, sans-serif;
+	color:#d9d9d9;
+}
+ul.sb_menu, ul.ex_menu {
+	margin:0;
+	padding:0;
+	color:#939393;
+	list-style:none;
+}
+ul.sb_menu li, ul.ex_menu li {
+	margin:0;
+}
+ul.sb_menu li {
+	padding:2px 0 2px 15px;
+}
+ul.ex_menu li {
+	padding:2px 0 2px 15px;
+}
+ul.sb_menu li a, ul.ex_menu li a {
+	display:block;
+	color:#959595;
+	text-decoration:none;
+	padding:5px;
+	margin-left:-15px;
+	padding-left:15px;
+}
+ul.sb_menu li a:hover, ul.ex_menu li a:hover, ul.sb_menu li.active a, ul.ex_menu li.active a {
+	color:#FFF;
+	background:#78bbe6;
+}
+ul.sb_menu li a:hover {
+	text-decoration:none;
+}
+ul.ex_menu li a:hover {
+	text-decoration:none;
+}
+
+.hrSlideBar ul li.active a, .menu_nav ul li a:hover {
+	color:#fff;
+	text-decoration:none;
+	background:#78bbe6;
+}
+ul.sb_menu li a:hover, ul.ex_menu li a:hover, ul.sb_menu li.active a, ul.ex_menu li.active a {
+	color:#FFF;
+	background:#78bbe6;
+}
+ul.sb_menu li a:hover {
+	text-decoration:none;
+}
