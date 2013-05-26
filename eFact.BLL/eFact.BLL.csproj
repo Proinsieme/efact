@@ -61,6 +61,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reference.cs" />
     <Compile Include="Salary.cs" />
+    <Compile Include="SecurityParameter.cs" />
     <Compile Include="Sick.cs" />
     <Compile Include="Status.cs" />
   </ItemGroup>

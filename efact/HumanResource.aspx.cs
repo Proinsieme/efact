@@ -9,7 +9,6 @@ namespace efact
 {
     public partial class HumanResource : System.Web.UI.Page
     {
-        /* Page Load */
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -18,11 +17,6 @@ namespace efact
         protected void activitiesAndAttentionLink_Click(object sender, EventArgs e)
         {
             ActivitiesAndAttentions.Visible = true;
-        }
-
-        private void test()
-        {
-            /* This is a test method */
         }
     }
 }

@@ -14,13 +14,20 @@ namespace eFact.BLL
     {
         public string UserName { get; set; }
         public string Password { get; set; }
+        public DateTime LastLoginDate { get; set; }
+        public DateTime ActivationDate { get; set; }
+        public DateTime PasswordExpireDate { get; set; }
+        public DateTime ProfileEndDate { get; set; }
+        public bool ForcePasswordChange { get; set; }
+        public string RecordStatus { get; set; }
 
         string connStr = ConfigurationManager.ConnectionStrings["DBconnStr"].ToString();
 
-        public string CheckUserExists(string userName, string password)
+        public string CheckUserExists(string userName, string password, out Login objLogin)
         {
             SqlConnection sqlConnection = new SqlConnection(connStr);
-            string loginStatus = "";
+            DataSet dataSet = new DataSet();
+            string Output = "0";
             try
             {
                 if (sqlConnection.State == ConnectionState.Closed)
@@ -32,8 +39,31 @@ namespace eFact.BLL
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 sqlCommand.Parameters.Add("@USERNAME", SqlDbType.VarChar).Value = userName;
                 sqlCommand.Parameters.Add("@PASSWORD", SqlDbType.VarChar).Value = password;
-                loginStatus = Convert.ToString(sqlCommand.ExecuteScalar());
-                return loginStatus;
+                SqlDataAdapter sqlAdapter = new SqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dataSet);
+
+                if (dataSet != null && dataSet.Tables.Count != 0)
+                {
+                    foreach (DataRowView drvUserDetail in dataSet.Tables[0].DefaultView)
+                    {
+                        Output = Convert.ToString(drvUserDetail["OUTPUT"]);
+                    }
+                    if (Output == "1" && dataSet.Tables.Count == 2)
+                    {
+                        foreach (DataRowView drvUserDetail in dataSet.Tables[1].DefaultView)
+                        {
+                            objLogin = new Login
+                            {
+                                LastLoginDate = Convert.ToDateTime(drvUserDetail["UserLastLoginDate"]),
+                                ActivationDate = Convert.ToDateTime(drvUserDetail["UserActivationDate"]),
+                                PasswordExpireDate = Convert.ToDateTime(drvUserDetail["UserPwdExpireDate"]),
+                                ForcePasswordChange = Convert.ToBoolean(drvUserDetail["UserForcePwdChange"]),
+                                ProfileEndDate = Convert.ToDateTime(drvUserDetail["UserProfileEndDate"]),
+                                RecordStatus = Convert.ToString(drvUserDetail["UserRecordStatus"])
+                            };
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {

@@ -13,7 +13,23 @@ namespace efact
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (!IsPostBack)
+            {
+                GetSecurityParameter();
+            }
+        }
+
+        private void GetSecurityParameter()
+        {
+            SecurityParameter objSecurityParameter = new SecurityParameter();
+            objSecurityParameter = objSecurityParameter.SecurityParameterGet();
+
+            if (objSecurityParameter != null)
+            {
+                Session["PasswordExpireDate"] = objSecurityParameter.PasswordExpireDate;
+                Session["FourEyePolicy"] = objSecurityParameter.FourEyePolicy;
+                Session["MaxLoginLimit"] = objSecurityParameter.MaxLoginLimit;
+            }
         }
 
         protected void Clear_Click(object sender, EventArgs e)
@@ -27,7 +43,7 @@ namespace efact
             eFact.BLL.Login objLogin = new eFact.BLL.Login();
             string loginExists = "0";
 
-            loginExists = objLogin.CheckUserExists(tbxUserName.Text, pwbPassword.Text);
+            loginExists = objLogin.CheckUserExists(tbxUserName.Text, pwbPassword.Text, out objLogin);
 
             if (loginExists != "0")
             {

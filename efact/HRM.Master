@@ -100,7 +100,8 @@
         //-->
     </script>
     <form id="form1" runat="server">
-        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <%--<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>--%>
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server"></telerik:RadScriptManager>
         <div id="main_wrapper">
             <div id="main">
                 <div style="text-align: right">

@@ -59,6 +59,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Telerik\RadControls for ASP.NET AJAX Q1 2013\Bin40\Telerik.Web.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Telerik.Web.UI.Skins">
+      <HintPath>C:\Program Files\Telerik\RadControls for ASP.NET AJAX Q1 2013\Bin40\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="ActiviesandAttentions.aspx" />
@@ -201,6 +204,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
+      <UserProperties UseAjaxifiedTemplates="False" UseJQuerySupport="False" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

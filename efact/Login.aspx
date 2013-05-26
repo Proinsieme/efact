@@ -28,7 +28,20 @@
         //    });
         //});
     </script>
-
+    <telerik:RadScriptManager ID="RadScriptManager1" runat="server"></telerik:RadScriptManager>
+    <telerik:RadAjaxManager ID="RadAjaxManager1" runat="server">
+        <AjaxSettings>
+            <telerik:AjaxSetting AjaxControlID="LoginButton">
+                <UpdatedControls>
+                    <telerik:AjaxUpdatedControl ControlID="FailureText" UpdatePanelCssClass="" />
+                    <telerik:AjaxUpdatedControl ControlID="tbxUserName" UpdatePanelCssClass="" />
+                    <telerik:AjaxUpdatedControl ControlID="RequiredFieldValidator1" UpdatePanelCssClass="" />
+                    <telerik:AjaxUpdatedControl ControlID="pwbPassword" UpdatePanelCssClass="" />
+                    <telerik:AjaxUpdatedControl ControlID="RequiredFieldValidator2" UpdatePanelCssClass="" />
+                </UpdatedControls>
+            </telerik:AjaxSetting>
+        </AjaxSettings>
+    </telerik:RadAjaxManager>
     <section id="loginForm">
         <%-- <asp:Login ID="LoginForm" runat="server">--%>
         <%-- <LayoutTemplate>--%>
