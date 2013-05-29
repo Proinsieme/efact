@@ -47,9 +47,40 @@ namespace efact
 
             if (loginExists != "0")
             {
-                ConfigurationManager.AppSettings["GlbUserId"] = loginExists;
-                //string glbUserId = ConfigurationManager.AppSettings["GlbUserId"].ToString();
-                Response.Redirect("efactModules.aspx");
+                if (objLogin != null)
+                {
+                    if (objLogin.RecordStatus == "U")
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "alert", "alert('User is in Unauthorized state. Please check this with your Security Officer(s)');", true);
+                    }
+                    else if (objLogin.ActivationDate > DateTime.Today)
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "alert", "alert('User activation date is not reached. Activation date is " + objLogin.ActivationDate + "');", true);
+                    }
+                    else if (DateTime.Today > objLogin.ProfileEndDate)
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "alert", "alert('Your login profile date has expired, please contact your Security Officer(s)');", true);
+                    }
+                    else if (objLogin.PasswordExpireDate > DateTime.Today)
+                    {
+                        //if ((objLogin.PasswordExpireDate - DateTime.Today).Days)) // <= Session["PasswordExpireDate"])
+                        //{
+                            ScriptManager.RegisterStartupScript(this, GetType(), "alert", "alert('Password will expire about " + (objLogin.PasswordExpireDate - DateTime.Today).Days + " day(s)');", true);
+                        //}
+                    }
+                    else if ((objLogin.PasswordExpireDate - DateTime.Today).Days <= Convert.ToInt32(Session["PasswordExpireDate"]))
+                    {
+                        ScriptManager.RegisterStartupScript(this, GetType(), "alert", "alert('Password is expired, please change your password');", true);
+                        Response.Redirect("ChangePassword.aspx");
+                    }
+                    else
+                    {
+                        ConfigurationManager.AppSettings["GlbUserId"] = loginExists;
+                        //string glbUserId = ConfigurationManager.AppSettings["GlbUserId"].ToString();
+                        Response.Redirect("efactModules.aspx");
+                    }
+                }
+               
             }
             else
             {

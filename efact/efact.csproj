@@ -66,6 +66,7 @@
   <ItemGroup>
     <Content Include="ActiviesandAttentions.aspx" />
     <Content Include="ActivitiesAndAttentions.ascx" />
+    <Content Include="ChangePassword.aspx" />
     <Content Include="Content\Site.css" />
     <Content Include="efactModules.aspx" />
     <Content Include="EmployeeDetails.aspx" />
@@ -112,6 +113,13 @@
     </Compile>
     <Compile Include="ActivitiesAndAttentions.ascx.designer.cs">
       <DependentUpon>ActivitiesAndAttentions.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="efact.Master.cs">
       <DependentUpon>efact.Master</DependentUpon>
@@ -204,7 +212,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseAjaxifiedTemplates="False" UseJQuerySupport="False" />
+      <UserProperties UseJQuerySupport="False" UseAjaxifiedTemplates="False" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

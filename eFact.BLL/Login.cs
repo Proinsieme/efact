@@ -28,6 +28,7 @@ namespace eFact.BLL
             SqlConnection sqlConnection = new SqlConnection(connStr);
             DataSet dataSet = new DataSet();
             string Output = "0";
+            objLogin = null;
             try
             {
                 if (sqlConnection.State == ConnectionState.Closed)
@@ -64,6 +65,7 @@ namespace eFact.BLL
                         }
                     }
                 }
+                return Output;
             }
             catch (Exception ex)
             {
