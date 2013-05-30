@@ -10,5 +10,7 @@
         <span>New Password</span> <asp:TextBox runat="server" ID="NewPassword" /><br />
         <span>Confirm New Password</span> <asp:TextBox runat="server" ID="ConfirmNewPassword" /><br />
         <asp:Button runat="server" ID="Save" Text="Save" />
+        <asp:Button runat="server" ID="Clear" Text="Clear" />
+        
     </div>
 </asp:Content>
