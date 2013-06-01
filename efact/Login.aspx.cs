@@ -72,6 +72,7 @@ namespace efact
                     {
                         ScriptManager.RegisterStartupScript(this, GetType(), "alert", "alert('Password is expired, please change your password');", true);
                         Response.Redirect("ChangePassword.aspx");
+                        Session["OldPassword"] = pwbPassword.Text;
                     }
                     else
                     {

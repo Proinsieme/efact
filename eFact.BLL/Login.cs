@@ -73,6 +73,30 @@ namespace eFact.BLL
             }
         }
 
+        public bool SaveUserPassword(string userName, string password)
+        {
+            SqlConnection sqlConnection = new SqlConnection(connStr);
+            bool isSuccess = false;
+            try
+            {
+                if (sqlConnection.State == ConnectionState.Closed)
+                {
+                    sqlConnection.Open();
+                }
+                password = Encrypt(password, userName);
+                SqlCommand sqlCommand = new SqlCommand("usp_SaveChangePassword", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.Add("@USERNAME", SqlDbType.VarChar).Value = userName;
+                sqlCommand.Parameters.Add("@PASSWORD", SqlDbType.VarChar).Value = password;
+                isSuccess = Convert.ToBoolean(sqlCommand.ExecuteScalar());
+                return isSuccess;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         private string Decrypt(string TextToBeDecrypted, string userId)
         {
             RijndaelManaged RijndaelCipher = new RijndaelManaged();

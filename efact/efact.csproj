@@ -97,6 +97,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="TreeView.aspx" />
+    <Content Include="UnAuthorized.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +172,13 @@
     <Compile Include="TreeView.aspx.designer.cs">
       <DependentUpon>TreeView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UnAuthorized.aspx.cs">
+      <DependentUpon>UnAuthorized.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UnAuthorized.aspx.designer.cs">
+      <DependentUpon>UnAuthorized.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="efact.Master" />
@@ -212,7 +220,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseJQuerySupport="False" UseAjaxifiedTemplates="False" />
+      <UserProperties UseAjaxifiedTemplates="False" UseJQuerySupport="False" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
