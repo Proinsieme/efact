@@ -35,5 +35,15 @@ namespace efact
             ConfigurationManager.AppSettings["GlbUserId"] = "";
             Response.Redirect("Login.aspx");
         }
+
+        protected void RadPanelBarHRMMenu_ItemClick(object sender, Telerik.Web.UI.RadPanelBarEventArgs e)
+        {
+            if (e.Item.Text == "Employment Details")
+            {
+                Response.Redirect("EmployeeDetails.aspx");
+            }
+        }
+
+        
     }
 }

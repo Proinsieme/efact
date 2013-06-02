@@ -20,7 +20,7 @@ namespace efact
 
         protected void activitiesAndAttentionLink_Click(object sender, EventArgs e)
         {
-            ActivitiesAndAttentions.Visible = true;
+            //ActivitiesAndAttentions.Visible = true;
         }
     }
 }

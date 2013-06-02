@@ -109,41 +109,55 @@
                     <asp:Label runat="server" ID="Seperator" Text="    |   " />
                     <asp:LinkButton ID="logout" runat="server" OnClick="logout_Click">Logout</asp:LinkButton>
                 </div>
-                <div>
-                    <telerik:RadAjaxPanel ID="RadAjaxPanel1" runat="server" LoadingPanelID="RadAjaxLoadingPanel1">
+               
+                <div class="hrContentContainer">
+                    <div class="hrSlideBar">
+                         <div>
+                    <div>
+                        <telerik:RadPanelBar runat="server" ID="RadPanelBarHRMMenu" Width="180px" ExpandMode="FullExpandedItem" OnItemClick="RadPanelBarHRMMenu_ItemClick" CollapseDelay="100" ExpandDelay="100" CollapseAnimation-Type="InBounce" >
+                            <Items>
+                                <telerik:RadPanelItem Expanded="false" Text="Today">
+                                    <Items>
+                                        <telerik:RadPanelItem Text="Leave Registration" />
+                                        <telerik:RadPanelItem Text="Overtime Reporting" />
+                                        <telerik:RadPanelItem Text="Sick Reporting" />
+                                    </Items>
+                                </telerik:RadPanelItem>
+                                <telerik:RadPanelItem Text="Organization">
+                                    <Items>
+                                        <telerik:RadPanelItem Text="Management" />
+                                        <telerik:RadPanelItem Text="Organization Chart" />
+                                    </Items>
+                                </telerik:RadPanelItem>
+                                <telerik:RadPanelItem Text="Staff">
+                                    <Items>
+                                        <telerik:RadPanelItem Text="Employment Details"  />
+                                        <telerik:RadPanelItem Text="Employee Assessment" />
+                                        <telerik:RadPanelItem Text="Employee Leaves" />
+                                        <telerik:RadPanelItem Text="Employee Overtime" />
+                                        <telerik:RadPanelItem Text="Employee Sick Reporting" />
+                                        <telerik:RadPanelItem Text="Loan & Advances" />
+                                    </Items>
+                                </telerik:RadPanelItem>
+                                <telerik:RadPanelItem Text="Staff Statistics">
+                                    <Items>
+                                        <telerik:RadPanelItem Text="Employees List" />
+                                        <telerik:RadPanelItem Text="Employee Details" />
+                                    </Items>
+                                </telerik:RadPanelItem>
+                                <telerik:RadPanelItem Text="Staff Statistics">
+                                    <Items>
+                                        <telerik:RadPanelItem Text="Employees List" />
+                                        <telerik:RadPanelItem Text="Employee Details" />
+                                    </Items>
+                                </telerik:RadPanelItem>
+                            </Items>
+                        </telerik:RadPanelBar>
+                    </div>
+                    <%-- <telerik:RadAjaxPanel ID="RadAjaxPanel1" runat="server" LoadingPanelID="RadAjaxLoadingPanel1">
                         <telerik:RadTreeView ID="RadTreeView1" runat="server" AllowNodeEditing="True"
                             OnClientContextMenuItemClicking="onClientContextMenuItemClicking" OnClientContextMenuShowing="onClientContextMenuShowing">
-                          <%--  <ContextMenus>
-                                <telerik:RadTreeViewContextMenu ID="MainContextMenu" runat="server">
-                                    <Items>
-                                        <telerik:RadMenuItem Value="Copy" Text="Copy ...">
-                                        </telerik:RadMenuItem>
-                                        <telerik:RadMenuItem Value="Rename" Text="Rename ..." Enabled="false"
-                                            PostBack="false">
-                                        </telerik:RadMenuItem>
-                                        <telerik:RadMenuItem Value="NewFolder" Text="New Folder">
-                                        </telerik:RadMenuItem>
-                                        <telerik:RadMenuItem Value="Delete" Text="Delete Folder">
-                                        </telerik:RadMenuItem>
-                                        <telerik:RadMenuItem IsSeparator="true">
-                                        </telerik:RadMenuItem>
-                                        <telerik:RadMenuItem Value="MarkAsRead" Text="Mark All as Read">
-                                        </telerik:RadMenuItem>
-                                    </Items>
-                                    <CollapseAnimation Type="none"></CollapseAnimation>
-                                </telerik:RadTreeViewContextMenu>
-                                <telerik:RadTreeViewContextMenu ID="EmptyFolderContextMenu" runat="server">
-                                    <Items>
-                                        <telerik:RadMenuItem Value="NewFolder" Text="New Folder" ImageUrl="~/TreeView/Img/Outlook/12.gif">
-                                        </telerik:RadMenuItem>
-                                        <telerik:RadMenuItem IsSeparator="true">
-                                        </telerik:RadMenuItem>
-                                        <telerik:RadMenuItem Value="EmptyFolder" Text="Empty this folder" ImageUrl="~/TreeView/Img/Outlook/2DeletedItems.gif">
-                                        </telerik:RadMenuItem>
-                                    </Items>
-                                    <CollapseAnimation Type="none"></CollapseAnimation>
-                                </telerik:RadTreeViewContextMenu>
-                            </ContextMenus>--%>
+                         
                             <Nodes>
                                 <telerik:RadTreeNode
                                     AllowEdit="false" Text="Today">
@@ -199,10 +213,15 @@
                                 </telerik:RadTreeNode>
                             </Nodes>
                         </telerik:RadTreeView>
-                    </telerik:RadAjaxPanel>
+                    </telerik:RadAjaxPanel>--%>
                 </div>
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                </asp:ContentPlaceHolder>
+                    </div>
+                    <div class="hrMainBar">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+
             </div>
         </div>
 

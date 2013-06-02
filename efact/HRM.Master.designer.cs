@@ -67,22 +67,13 @@ namespace efact {
         protected global::System.Web.UI.WebControls.LinkButton logout;
         
         /// <summary>
-        /// RadAjaxPanel1 control.
+        /// RadPanelBarHRMMenu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadAjaxPanel RadAjaxPanel1;
-        
-        /// <summary>
-        /// RadTreeView1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Telerik.Web.UI.RadTreeView RadTreeView1;
+        protected global::Telerik.Web.UI.RadPanelBar RadPanelBarHRMMenu;
         
         /// <summary>
         /// ContentPlaceHolder1 control.

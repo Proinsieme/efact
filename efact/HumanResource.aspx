@@ -14,12 +14,10 @@
   <%--  <telerik:RadScriptManager ID="RadScriptManager1" runat="server"></telerik:RadScriptManager>--%>
     <div class="hrContentContainer">
         <div class="hrContentBlock">
-            <div class="hrSlideBar">
+            <%--<div class="hrSlideBar">
                 <div class="gadget">
                     <ul class="sb_menu">
                         <li><a href="efactModules.aspx">Home</a></li>
-                        <%--class="active">--%>
-
                         <li><a id="activitiesAndAttentionLink" href="#">Activies & Attention</a></li>
                         <li><a href="EmployeeDetails.aspx" onclick="">Staffs</a></li>
                     </ul>
@@ -30,7 +28,7 @@
                     <br />
                     <uc1:activitiesandattentions runat="server" ID="ActivitiesAndAttentions" Visible="true" />
                 </div>
-            </div>
+            </div>--%>
         </div>
     </div>
 </asp:Content>

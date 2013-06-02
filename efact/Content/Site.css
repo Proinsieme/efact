@@ -16,7 +16,7 @@
 }
 
 #header {
-    width: 820px;
+    width: 1000px;
     min-height: 20px;
     padding: 15px 15px 15px;
     margin: 0 auto;
@@ -30,7 +30,7 @@
 }
 
 #main {
-    width: 820px;
+    width: 1000px;
     margin: 0 auto;
     padding: 0 10px;
     overflow: hidden;
@@ -203,11 +203,10 @@ moduleImg {
     position: relative;
     float: left;
     padding: 5px;
-    margin-left:30px;
+    margin-left: 30px;
     width: 780px;
     height: 520px;
     /*margin-right: 20px;*/
-    
 }
 
 
@@ -216,7 +215,7 @@ moduleImg {
     
     list-style: none;*/
     margin: 0px;
-    margin-left:40px;
+    margin-left: 40px;
 }
 
     #module_menu li {
@@ -226,7 +225,7 @@ moduleImg {
         height: 160px;
         margin: 0 20px 20px 0;
         background: url(../images/menu_box.png) no-repeat;
-        text-align:center;
+        text-align: center;
     }
 
         #module_menu li.no_margin_right {
@@ -334,95 +333,164 @@ moduleImg {
 /* HR Module Tags */
 
 .hrContentContainer .hrContentBlock, .hrSlideBar .hrMainBar {
-    border-color:violet;
-	margin:0;
-	padding:0;
+    border-color: violet;
+    margin: 0;
+    padding: 0;
 }
 
 .hrContentContainer {
-	padding:0;
-	margin:0 auto;
-	width:923px;
-}
-.hrMainBar {
-	margin:0;
-	padding:0;
-	float:right;
-	width:763px;
-    margin-top:20px;
-}
-.hrSlideBar { /* Width : 923 */
-	padding:0;
-	float:left;
-	/*width:285px;*/
-    width:160px;
-    margin-top:20px;
-    color:darkblue;
+    padding: 0;
+    margin: 0 auto;
+    width: 1000px;
 }
 
-.hrSlideBar .gadget {
-	margin:0;
-	padding:10px 15px 10px 0;
+.hrMainBar {
+    margin: 0;
+    padding: 0;
+    float: right;
+    width: 800px;
 }
-.hrSlideBar .gadget .testi {
-	padding:0 0 0 0;
+
+.hrSlideBar {
+    padding: 0;
+    float: left;
+    width: 180px;
+    margin-top: 20px;
+    color: darkblue;
 }
-.hrSlideBar .gadget .title {
-	text-align:right;
-}
-.hrSlideBar .gadget span.q {
-	text-align:right;
-	font:normal 60px/12px Arial, Helvetica, sans-serif;
-	color:#d9d9d9;
-}
+
+    .hrSlideBar .gadget {
+        margin: 0;
+        padding: 10px 15px 10px 0;
+    }
+
+        .hrSlideBar .gadget .testi {
+            padding: 0 0 0 0;
+        }
+
+        .hrSlideBar .gadget .title {
+            text-align: right;
+        }
+
+        .hrSlideBar .gadget span.q {
+            text-align: right;
+            font: normal 60px/12px Arial, Helvetica, sans-serif;
+            color: #d9d9d9;
+        }
+
 ul.sb_menu, ul.ex_menu {
-	margin:0;
-	padding:0;
-	color:#939393;
-	list-style:none;
+    margin: 0;
+    padding: 0;
+    color: #939393;
+    list-style: none;
 }
-ul.sb_menu li, ul.ex_menu li {
-	margin:0;
-}
-ul.sb_menu li {
-	padding:2px 0 2px 15px;
-}
-ul.ex_menu li {
-	padding:2px 0 2px 15px;
-}
-ul.sb_menu li a, ul.ex_menu li a {
-	display:block;
-	color:#959595;
-	text-decoration:none;
-	padding:5px;
-	margin-left:-15px;
-	padding-left:15px;
-}
-ul.sb_menu li a:hover, ul.ex_menu li a:hover, ul.sb_menu li.active a, ul.ex_menu li.active a {
-	color:#FFF;
-	background:#78bbe6;
-}
-ul.sb_menu li a:hover {
-	text-decoration:none;
-}
-ul.ex_menu li a:hover {
-	text-decoration:none;
-}
+
+    ul.sb_menu li, ul.ex_menu li {
+        margin: 0;
+    }
+
+    ul.sb_menu li {
+        padding: 2px 0 2px 15px;
+    }
+
+    ul.ex_menu li {
+        padding: 2px 0 2px 15px;
+    }
+
+        ul.sb_menu li a, ul.ex_menu li a {
+            display: block;
+            color: #959595;
+            text-decoration: none;
+            padding: 5px;
+            margin-left: -15px;
+            padding-left: 15px;
+        }
+
+            ul.sb_menu li a:hover, ul.ex_menu li a:hover, ul.sb_menu li.active a, ul.ex_menu li.active a {
+                color: #FFF;
+                background: #78bbe6;
+            }
+
+            ul.sb_menu li a:hover {
+                text-decoration: none;
+            }
+
+            ul.ex_menu li a:hover {
+                text-decoration: none;
+            }
 
 .hrSlideBar ul li.active a, .menu_nav ul li a:hover {
-	color:#fff;
-	text-decoration:none;
-	background:#78bbe6;
+    color: #fff;
+    text-decoration: none;
+    background: #78bbe6;
 }
+
 ul.sb_menu li a:hover, ul.ex_menu li a:hover, ul.sb_menu li.active a, ul.ex_menu li.active a {
-	color:#FFF;
-	background:#78bbe6;
+    color: #FFF;
+    background: #78bbe6;
 }
+
 ul.sb_menu li a:hover {
-	text-decoration:none;
+    text-decoration: none;
 }
 
 .errorLabel {
-    
-    
+}
+
+
+#container {
+    background-color: #0ff;
+    float: left;
+    width: 100%;
+    border-left: 150px solid #0f0;
+    border-right: 200px solid #f00;
+    margin-left: -150px;
+    margin-right: -200px;
+    display: inline; /* So IE plays nice */
+}
+
+#leftRail {
+    float: left;
+    width: 150px;
+    margin-left: -150px;
+    position: relative;
+}
+
+#center {
+    float: left;
+    width: 100%;
+    margin-right: -100%;
+}
+
+#rightRail {
+    float: right;
+    width: 200px;
+    margin-right: -200px;
+    position: relative;
+}
+
+.leftPanel1 {
+    width: 100px;
+    text-align: right;
+    float: left;
+    margin-right: 10px;
+}
+
+.leftPanel2 {
+    width: 170px;
+    text-align: right;
+    float: left;
+    margin-right: 10px;
+}
+
+.rightPanel {
+    width: 220px;
+    float: left;
+}
+
+.tag {
+    width: 750px;
+    float: left;
+    height: 30px;
+    vertical-align: middle;
 }

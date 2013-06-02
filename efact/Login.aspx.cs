@@ -61,22 +61,24 @@ namespace efact
                     {
                         ScriptManager.RegisterStartupScript(this, GetType(), "alert", "alert('Your login profile date has expired, please contact your Security Officer(s)');", true);
                     }
-                    else if (objLogin.PasswordExpireDate > DateTime.Today)
+                    else if (CheckUserPasswordExpireDate(objLogin))
                     {
-                        //if ((objLogin.PasswordExpireDate - DateTime.Today).Days)) // <= Session["PasswordExpireDate"])
-                        //{
-                            ScriptManager.RegisterStartupScript(this, GetType(), "alert", "alert('Password will expire about " + (objLogin.PasswordExpireDate - DateTime.Today).Days + " day(s)');", true);
-                        //}
-                    }
-                    else if ((objLogin.PasswordExpireDate - DateTime.Today).Days <= Convert.ToInt32(Session["PasswordExpireDate"]))
-                    {
-                        ScriptManager.RegisterStartupScript(this, GetType(), "alert", "alert('Password is expired, please change your password');", true);
+                        ConfigurationManager.AppSettings["GlbUserId"] = tbxUserName.Text;
                         Response.Redirect("ChangePassword.aspx");
                         Session["OldPassword"] = pwbPassword.Text;
                     }
+                    //else if ((objLogin.PasswordExpireDate - DateTime.Today).Days <= Convert.ToInt32(Session["PasswordExpireDate"]))
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, GetType(), "alert", "alert('Last sucessful Login date = " + objLogin.LastLoginDate.Date + "');", true);
+                    //    ScriptManager.RegisterStartupScript(this, GetType(), "alert", "alert('Password is expired, please change your password');", true);
+                    //    ConfigurationManager.AppSettings["GlbUserId"] = tbxUserName.Text;
+                    //    Response.Redirect("ChangePassword.aspx");
+                    //    Session["OldPassword"] = pwbPassword.Text;
+                    //}
                     else
                     {
-                        ConfigurationManager.AppSettings["GlbUserId"] = loginExists;
+                        ScriptManager.RegisterStartupScript(this, GetType(), "alert", "alert('Last sucessful Login date = " + objLogin.LastLoginDate.Date +"');", true);
+                        ConfigurationManager.AppSettings["GlbUserId"] = tbxUserName.Text;
                         //string glbUserId = ConfigurationManager.AppSettings["GlbUserId"].ToString();
                         Response.Redirect("efactModules.aspx");
                     }
@@ -88,6 +90,25 @@ namespace efact
                 /* Failure report */
                 FailureText.Text = "User not Exists !";
             }
+        }
+
+
+        public bool CheckUserPasswordExpireDate(eFact.BLL.Login objLogin)
+        {
+            bool IsUserPasswordExpire = true;
+            if (objLogin.PasswordExpireDate > DateTime.Today)
+            {
+                IsUserPasswordExpire = false;
+                if ((objLogin.PasswordExpireDate - DateTime.Today).Days <= Convert.ToInt32(Session["PasswordExpireDate"]))
+                {
+                    ScriptManager.RegisterStartupScript(this, GetType(), "alert", "alert('Password will expire about " + (objLogin.PasswordExpireDate - DateTime.Today).Days + " day(s)');", true);
+                }
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "alert", "alert('Password is expired, please change your password');", true);
+            }
+            return IsUserPasswordExpire;
         }
 
         protected void tbxUserName_TextChanged(object sender, EventArgs e)
