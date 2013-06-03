@@ -170,10 +170,10 @@
                     </div>
                 </div>
             </fieldset>
-            <fieldset style="width: 750px;margin-top:10px;">
+            <fieldset style="width: 750px; margin-top: 10px;">
                 <legend>Employee Details</legend>
                 <div>
-                    <telerik:RadTabStrip ID="TabStrip1" runat="server" Skin="Simple" MultiPageID="RadMultiPag1" SelectedIndex="6" Font-Names="Calibri" Font-Size="Small" Width="95%" Align="Center">
+                    <telerik:RadTabStrip ID="TabStrip1" runat="server" Skin="Simple" MultiPageID="RadMultiPag1" SelectedIndex="1" Font-Names="Calibri" Font-Size="Small" Width="95%" Align="Center">
                         <Tabs>
                             <telerik:RadTab Text="Employment"></telerik:RadTab>
                             <telerik:RadTab Text="Assignment"></telerik:RadTab>
@@ -188,8 +188,8 @@
                     </telerik:RadTabStrip>
                     <telerik:RadMultiPage ID="RadMultiPag1" runat="server" SelectedIndex="0">
                         <telerik:RadPageView ID="RadPageView1" runat="server" Height="300" Style="overflow: hidden">
-                            <div style="float:left;">
-                                <fieldset style="width: 280px; margin-left: 10px; margin-top: 5px;float:left;">
+                            <div style="float: left;">
+                                <fieldset style="width: 280px; margin-left: 10px; margin-top: 5px; float: left;">
                                     <legend>Status</legend>
                                     <div>
                                         <div style="width: 130px; text-align: right; float: left; margin-right: 10px; height: 30px;">
@@ -224,7 +224,7 @@
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset style="width: 280px; margin-left: 10px; margin-top: 5px;float:left;">
+                                <fieldset style="width: 280px; margin-left: 10px; margin-top: 5px; float: left;">
                                     <legend>Effective Dates</legend>
                                     <div>
                                         <div style="width: 130px; text-align: right; float: left; margin-right: 10px; height: 30px;">
@@ -233,7 +233,7 @@
                                         <div style="width: 140px; float: left; height: 30px;">
                                             <telerik:RadDatePicker runat="server" ID="dpOriginalHireDate" Width="130px" />
                                         </div>
-                                         <div style="width: 130px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                        <div style="width: 130px; text-align: right; float: left; margin-right: 10px; height: 30px;">
                                             <asp:Label runat="server" ID="lblProbationEndDate" Text="Probaton End Date" />
                                         </div>
                                         <div style="width: 140px; float: left; height: 30px;">
@@ -253,7 +253,7 @@
                                         </div>
                                     </div>
                                 </fieldset>
-                                <fieldset style="width: 580px; margin-left: 10px; margin-top: 5px;float:left;">
+                                <fieldset style="width: 580px; margin-left: 10px; margin-top: 5px; float: left;">
                                     <legend>Temp Employment Info</legend>
                                     <div>
                                         <div style="width: 150px; text-align: right; float: left; margin-right: 10px; height: 30px;">
@@ -278,17 +278,89 @@
                                             <asp:Label runat="server" ID="lblEducationEndDate" Text="End Date" />
                                         </div>
                                         <div style="width: 140px; float: left; height: 30px;">
-                                           <telerik:RadDatePicker runat="server" ID="dpEducationEndDate" Width="130px" />
+                                            <telerik:RadDatePicker runat="server" ID="dpEducationEndDate" Width="130px" />
                                         </div>
                                     </div>
                                 </fieldset>
                             </div>
                         </telerik:RadPageView>
-                        <telerik:RadPageView ID="RadPageView2" runat="server" Height="500" Style="overflow: hidden">
+                        <telerik:RadPageView ID="RadPageView2" runat="server" Height="300" Style="overflow: hidden">
+                            <div class="tag">
+                                <fieldset style="width: 720px; margin-left: 10px; margin-top: 5px; float: left;">
+                                    <legend>Assignment Details</legend>
+                                    <div style="float: left; width: 170px;">
+                                        <div style="width: 150px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                            <asp:Label runat="server" ID="Label1" Text="Company Cost Centre" />
+                                        </div>
+                                        <div style="width: 150px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                            <asp:Label runat="server" ID="lblAssignmentDeptName" Text="Department Name" />
+                                        </div>
+                                        <div style="width: 150px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                            <asp:Label runat="server" ID="Label2" Text="Location" />
+                                        </div>
+                                        <div style="width: 150px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                            <asp:Label runat="server" ID="Label3" Text="Job Title" />
+                                        </div>
+                                        <div style="width: 150px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                            <asp:Label runat="server" ID="Label4" Text="Position" />
+                                        </div>
+
+
+                                        <div style="width: 150px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                            <asp:Label runat="server" ID="Label5" Text="Supervisor" />
+                                        </div>
+                                        <div style="width: 150px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                            <asp:Label runat="server" ID="Label6" Text="Mentor" />
+                                        </div>
+                                        <div style="width: 150px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                            <asp:Label runat="server" ID="Label7" Text="Grade" />
+                                        </div>
+                                    </div>
+                                    <div style="float: left; width: 200px;">
+                                        <div style="width: 300px; float: left; height: 30px;">
+                                            <telerik:RadComboBox runat="server" ID="cbxCompanyCostCentre" Width="150px" />
+                                        </div>
+                                        <div style="width: 400px; float: left; height: 30px;">
+                                            <telerik:RadComboBox runat="server" ID="cbxAssignmentDepartmentName" Width="150px" />
+                                        </div>
+                                        <div style="width: 300px; float: left; height: 30px;">
+                                            <telerik:RadComboBox runat="server" ID="cbxAssignmentLocation" Width="150px" />
+                                        </div>
+                                        <div style="width: 300px; float: left; height: 30px;">
+                                            <telerik:RadComboBox runat="server" ID="cbxAssignmentJobTitle" Width="150px" />
+                                        </div>
+                                        <div style="width: 300px; float: left; height: 30px;">
+                                            <telerik:RadComboBox runat="server" ID="cbxAssignmentPosition" Width="150px" />
+                                        </div>
+
+                                        <div style="width: 300px; float: left; height: 30px;">
+                                            <telerik:RadComboBox runat="server" ID="cbxAssignmentSupervisor" Width="150px" />
+                                        </div>
+                                        <div style="width: 300px; float: left; height: 30px;">
+                                            <telerik:RadComboBox runat="server" ID="cbxAssignmentMentor" Width="150px" />
+                                        </div>
+                                        <div style="width: 300px; float: left; height: 30px;">
+                                            <telerik:RadComboBox runat="server" ID="cbxAssignmentGrade" Width="150px" />
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
                         </telerik:RadPageView>
-                        <telerik:RadPageView ID="RadPageView3" runat="server" Height="500" Style="overflow: hidden">
+                        <telerik:RadPageView ID="RadPageView3" runat="server" Height="300" Style="overflow: hidden">
+                            <div class="tag">
+                                <div>
+                                    <fieldset style="width: 280px; margin-left: 10px; margin-top: 5px; float: left;">
+                                        <legend>Overview Education/Training</legend>
+                                    </fieldset>
+                                </div>
+                                <div>
+                                    <fieldset style="width: 420px; margin-left: 10px; margin-top: 5px; float: left;">
+                                        <legend>Education Details</legend>
+                                    </fieldset>
+                                </div>
+                            </div>
                         </telerik:RadPageView>
-                        <telerik:RadPageView ID="RadPageView4" runat="server" Height="500" Style="overflow: hidden">
+                        <telerik:RadPageView ID="RadPageView4" runat="server" Height="300" Style="overflow: hidden">
                         </telerik:RadPageView>
                     </telerik:RadMultiPage>
                 </div>
