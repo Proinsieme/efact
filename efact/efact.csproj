@@ -28,6 +28,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -36,6 +37,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -74,6 +76,7 @@
     <Content Include="Images\efact-HR.png" />
     <Content Include="Images\efact_logo.png" />
     <Content Include="Images\efact_logo1.png" />
+    <Content Include="Images\humanresources.png" />
     <Content Include="Images\Icons\About.png" />
     <Content Include="Images\Icons\New.png" />
     <Content Include="Images\Icons\Save.png" />
@@ -96,6 +99,7 @@
     <Content Include="Images\wrapper.png" />
     <Content Include="Login.aspx" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Test.aspx" />
     <Content Include="TreeView.aspx" />
     <Content Include="UnAuthorized.aspx" />
     <Content Include="Web.config" />
@@ -165,6 +169,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TreeView.aspx.cs">
       <DependentUpon>TreeView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

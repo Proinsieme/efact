@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "efact", "efact\efact.csproj", "{27E71FC9-592F-4E66-89F9-9C705226CF9F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eFact.BLL", "eFact.BLL\eFact.BLL.csproj", "{60885496-E863-4671-B49F-4B3E2F374B29}"

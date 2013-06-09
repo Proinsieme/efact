@@ -47,7 +47,7 @@
 
         //this method disables the appropriate context menu items
         function setMenuItemsState(menuItems, treeNode) {
-            for (var i = 0; i < menuItems.get_count() ; i++) {
+            for (var i = 0; i < menuItems.get_count(); i++) {
                 var menuItem = menuItems.getItem(i);
                 switch (menuItem.get_value()) {
                     case "Copy":
@@ -100,61 +100,150 @@
         //-->
     </script>
     <form id="form1" runat="server">
-        <%--<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>--%>
-        <telerik:RadScriptManager ID="RadScriptManager1" runat="server"></telerik:RadScriptManager>
-        <div id="main_wrapper">
-            <div id="main">
-                <div style="text-align: right">
-                    <asp:Label runat="server" ID="WelcomeNote" />
-                    <asp:Label runat="server" ID="Seperator" Text="    |   " />
-                    <asp:LinkButton ID="logout" runat="server" OnClick="logout_Click">Logout</asp:LinkButton>
-                </div>
-               
-                <div class="hrContentContainer">
-                    <div class="hrSlideBar">
-                         <div>
-                    <div>
-                        <telerik:RadPanelBar runat="server" ID="RadPanelBarHRMMenu" Width="180px" ExpandMode="FullExpandedItem" OnItemClick="RadPanelBarHRMMenu_ItemClick" CollapseDelay="100" ExpandDelay="100" CollapseAnimation-Type="InBounce" >
+    <%--<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>--%>
+    <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+    </telerik:RadScriptManager>
+    <div id="main_wrapper">
+        <div id="main">
+            <div style="text-align: right">
+                <asp:Label runat="server" ID="WelcomeNote" />
+                <asp:Label runat="server" ID="Seperator" Text="    |   " />
+                <asp:LinkButton ID="logout" runat="server" OnClick="logout_Click">Logout</asp:LinkButton>
+            </div>
+            <telerik:RadScriptBlock ID="RadScriptBlock1" runat="server">
+                <script type="text/javascript">
+                    function itemOpened(s, e) {
+                        if ($telerik.isIE8) {
+                            // Fix an IE 8 bug that causes the list bullets to disappear (standards mode only)
+                            $telerik.$("li", e.get_item().get_element())
+                              .each(function () { this.style.cssText = this.style.cssText; });
+                        }
+                    }
+                </script>
+            </telerik:RadScriptBlock>
+            <div class="hrContentContainer">
+                <div class="hrMenuContainer">
+                    <div id="MegaDropDown">
+                        <telerik:RadMenu runat="server" ID="RadMenu1" Skin="Sitefinity" OnClientItemOpened="itemOpened"
+                            Width="880" Height="40" EnableShadows="true">
                             <Items>
-                                <telerik:RadPanelItem Expanded="false" Text="Today">
+                                <telerik:RadMenuItem Text="Human Resource" PostBack="false">
                                     <Items>
-                                        <telerik:RadPanelItem Text="Leave Registration" />
-                                        <telerik:RadPanelItem Text="Overtime Reporting" />
-                                        <telerik:RadPanelItem Text="Sick Reporting" />
+                                        <telerik:RadMenuItem CssClass="Products" Width="640">
+                                            <ItemTemplate>
+                                                <div id="CatWrapper" class="Wrapper" style="width: 435px;">
+                                                    <h3>
+                                                        Human Resource</h3>
+                                                    <telerik:RadSiteMap ID="RadSiteMap1" runat="server" Skin="Hay" EnableTextHTMLEncoding="true">
+                                                        <LevelSettings>
+                                                            <telerik:SiteMapLevelSetting Level="0">
+                                                                <ListLayout RepeatColumns="3" RepeatDirection="Vertical" />
+                                                            </telerik:SiteMapLevelSetting>
+                                                        </LevelSettings>
+                                                        <Nodes>
+                                                            <telerik:RadSiteMapNode NavigateUrl="#" Text="Today">
+                                                                <Nodes>
+                                                                   <%-- <telerik:RadSiteMapNode NavigateUrl="#" Text="Tables &amp; Chairs" />--%>
+                                                                    <telerik:RadSiteMapNode NavigateUrl="#" Text="Leave Registration" />
+                                                                    <telerik:RadSiteMapNode NavigateUrl="#" Text="Overtime Reporting" />
+                                                                    <telerik:RadSiteMapNode NavigateUrl="#" Text="Sick Reporting" />
+                                                                </Nodes>
+                                                            </telerik:RadSiteMapNode>
+                                                            <telerik:RadSiteMapNode NavigateUrl="#" Text="Organization">
+                                                                <Nodes>
+                                                                    <telerik:RadSiteMapNode NavigateUrl="#" Text="Management" />
+                                                                    <telerik:RadSiteMapNode NavigateUrl="#" Text="Organization Chart" />
+                                                                </Nodes>
+                                                            </telerik:RadSiteMapNode>
+                                                            <telerik:RadSiteMapNode NavigateUrl="#" Text="Staff">
+                                                                <Nodes>
+                                                                    <telerik:RadSiteMapNode NavigateUrl="EmployeeDetails.aspx" Text="Employment Details" />
+                                                                    <telerik:RadSiteMapNode NavigateUrl="#" Text="Employee Assessment" />
+                                                                    <telerik:RadSiteMapNode NavigateUrl="#" Text="Employee Leaves" />
+                                                                    <telerik:RadSiteMapNode NavigateUrl="#" Text="Employee Overtime" />
+                                                                    <telerik:RadSiteMapNode NavigateUrl="#" Text="Employee Sick Reporting" />
+                                                                    <telerik:RadSiteMapNode NavigateUrl="#" Text="Loan & Advances" />
+                                                                </Nodes>
+                                                            </telerik:RadSiteMapNode>
+                                                            <telerik:RadSiteMapNode NavigateUrl="#" Text="Staff Statistics">
+                                                                <Nodes>
+                                                                    <telerik:RadSiteMapNode NavigateUrl="#" Text="Employees List" />
+                                                                    <telerik:RadSiteMapNode NavigateUrl="#" Text="Employee Details" />
+                                                                </Nodes>
+                                                            </telerik:RadSiteMapNode>
+                                                            <telerik:RadSiteMapNode NavigateUrl="#" Text="Maintenance">
+                                                                <Nodes>
+                                                                    <telerik:RadSiteMapNode NavigateUrl="#" Text="General Definitions" />
+                                                                    <telerik:RadSiteMapNode NavigateUrl="#" Text="Staff Definitions" />
+                                                                </Nodes>
+                                                            </telerik:RadSiteMapNode>
+                                                        </Nodes>
+                                                    </telerik:RadSiteMap>
+                                                </div>
+                                                <div id="FeatProduct">
+                                                    <h3>
+                                                        Featured</h3>
+                                                    <img src="Images/humanresources.png" alt="Deco Mirror Table Lamp - $ 24.99" width="128"
+                                                        height="150" />
+                                                    <p>
+                                                        Logo
+                                                        <br />
+                                                    </p>
+                                                </div>
+                                            </ItemTemplate>
+                                        </telerik:RadMenuItem>
                                     </Items>
-                                </telerik:RadPanelItem>
-                                <telerik:RadPanelItem Text="Organization">
-                                    <Items>
-                                        <telerik:RadPanelItem Text="Management" />
-                                        <telerik:RadPanelItem Text="Organization Chart" />
-                                    </Items>
-                                </telerik:RadPanelItem>
-                                <telerik:RadPanelItem Text="Staff">
-                                    <Items>
-                                        <telerik:RadPanelItem Text="Employment Details"  />
-                                        <telerik:RadPanelItem Text="Employee Assessment" />
-                                        <telerik:RadPanelItem Text="Employee Leaves" />
-                                        <telerik:RadPanelItem Text="Employee Overtime" />
-                                        <telerik:RadPanelItem Text="Employee Sick Reporting" />
-                                        <telerik:RadPanelItem Text="Loan & Advances" />
-                                    </Items>
-                                </telerik:RadPanelItem>
-                                <telerik:RadPanelItem Text="Staff Statistics">
-                                    <Items>
-                                        <telerik:RadPanelItem Text="Employees List" />
-                                        <telerik:RadPanelItem Text="Employee Details" />
-                                    </Items>
-                                </telerik:RadPanelItem>
-                                <telerik:RadPanelItem Text="Staff Statistics">
-                                    <Items>
-                                        <telerik:RadPanelItem Text="Employees List" />
-                                        <telerik:RadPanelItem Text="Employee Details" />
-                                    </Items>
-                                </telerik:RadPanelItem>
+                                </telerik:RadMenuItem>
                             </Items>
-                        </telerik:RadPanelBar>
+                        </telerik:RadMenu>
                     </div>
-                    <%-- <telerik:RadAjaxPanel ID="RadAjaxPanel1" runat="server" LoadingPanelID="RadAjaxLoadingPanel1">
+                </div>
+                <%--  <div class="hrSlideBar">
+                    <div>
+                        <div>
+                            <telerik:RadPanelBar runat="server" ID="RadPanelBarHRMMenu" Width="180px" ExpandMode="FullExpandedItem"
+                                OnItemClick="RadPanelBarHRMMenu_ItemClick" CollapseDelay="100" ExpandDelay="100"
+                                CollapseAnimation-Type="InBounce">
+                                <Items>
+                                    <telerik:RadPanelItem Expanded="false" Text="Today">
+                                        <Items>
+                                            <telerik:RadPanelItem Text="Leave Registration" />
+                                            <telerik:RadPanelItem Text="Overtime Reporting" />
+                                            <telerik:RadPanelItem Text="Sick Reporting" />
+                                        </Items>
+                                    </telerik:RadPanelItem>
+                                    <telerik:RadPanelItem Text="Organization">
+                                        <Items>
+                                            <telerik:RadPanelItem Text="Management" />
+                                            <telerik:RadPanelItem Text="Organization Chart" />
+                                        </Items>
+                                    </telerik:RadPanelItem>
+                                    <telerik:RadPanelItem Text="Staff">
+                                        <Items>
+                                            <telerik:RadPanelItem Text="Employment Details" />
+                                            <telerik:RadPanelItem Text="Employee Assessment" />
+                                            <telerik:RadPanelItem Text="Employee Leaves" />
+                                            <telerik:RadPanelItem Text="Employee Overtime" />
+                                            <telerik:RadPanelItem Text="Employee Sick Reporting" />
+                                            <telerik:RadPanelItem Text="Loan & Advances" />
+                                        </Items>
+                                    </telerik:RadPanelItem>
+                                    <telerik:RadPanelItem Text="Staff Statistics">
+                                        <Items>
+                                            <telerik:RadPanelItem Text="Employees List" />
+                                            <telerik:RadPanelItem Text="Employee Details" />
+                                        </Items>
+                                    </telerik:RadPanelItem>
+                                    <telerik:RadPanelItem Text="Maintenance">
+                                        <Items>
+                                            <telerik:RadPanelItem Text="General Definitions" />
+                                            <telerik:RadPanelItem Text="Staff Definitions" />
+                                        </Items>
+                                    </telerik:RadPanelItem>
+                                </Items>
+                            </telerik:RadPanelBar>
+                        </div>
+                      <telerik:RadAjaxPanel ID="RadAjaxPanel1" runat="server" LoadingPanelID="RadAjaxLoadingPanel1">
                         <telerik:RadTreeView ID="RadTreeView1" runat="server" AllowNodeEditing="True"
                             OnClientContextMenuItemClicking="onClientContextMenuItemClicking" OnClientContextMenuShowing="onClientContextMenuShowing">
                          
@@ -213,27 +302,23 @@
                                 </telerik:RadTreeNode>
                             </Nodes>
                         </telerik:RadTreeView>
-                    </telerik:RadAjaxPanel>--%>
-                </div>
-                    </div>
-                    <div class="hrMainBar">
-                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </div>
-                </div>
-
+                    </telerik:RadAjaxPanel>
+                    </div>--%>
+            </div>
+            <div class="hrMainBar">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
             </div>
         </div>
+    </div>
 
-        <div>
-        </div>
-
-        <footer id="footer_wrapper">
+    <div>
+    </div>
+    <footer id="footer_wrapper">
             <div id="footer" style="float: right">
                 &copy efact | Proinsieme B.V. The Netherlands | 2013 All rights Reserved
             </div>
         </footer>
-
     </form>
 </body>
 </html>
