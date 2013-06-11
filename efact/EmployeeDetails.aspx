@@ -34,7 +34,7 @@
                 <br />
             </div>
         </div>--%>
-        <div style="width: 100px;float:left">
+        <div style="width: 100px; float: left">
             <fieldset style="width: 975px;">
                 <legend>General Employee Info</legend>
                 <div style="float: left; width: 750px;">
@@ -171,9 +171,10 @@
                         </div>
                     </div>
                 </div>
-                <div style="width: 200px;float:left">
-                    <asp:Image runat="server" ID="imgProfileImage" Width="200px" Height="200px" ImageUrl="~/Images/humanresources.png"/>
-                </div>`
+                <div style="width: 200px; float: left">
+                    <asp:Image runat="server" ID="imgProfileImage" Width="200px" Height="200px" ImageUrl="~/Images/humanresources.png" />
+                </div>
+                `
             </fieldset>
             <fieldset style="width: 975px; margin-top: 10px;">
                 <legend>Employee Details</legend>
@@ -912,6 +913,201 @@
                         </telerik:RadPageView>
                         <telerik:RadPageView ID="RadPageView6" runat="server" Height="300" Style="overflow: hidden">
                             <div class="tag">
+                                <div style="margin-top: 10px;">
+                                    <telerik:RadTabStrip ID="RadTabStrip3" runat="server" Skin="Simple" MultiPageID="RadMultiPag3"
+                                        SelectedIndex="0" Font-Names="Calibri" Font-Size="Small" Width="975px" Align="Left">
+                                        <Tabs>
+                                            <telerik:RadTab Text="Salary Details">
+                                            </telerik:RadTab>
+                                            <telerik:RadTab Text="Allowance">
+                                            </telerik:RadTab>
+                                            <telerik:RadTab Text="Salary Cumulative">
+                                            </telerik:RadTab>
+                                        </Tabs>
+                                    </telerik:RadTabStrip>
+                                    <telerik:RadMultiPage ID="RadMultiPage3" runat="server" SelectedIndex="1">
+                                        <telerik:RadPageView ID="RadPageView15" runat="server" Height="300" Style="overflow: hidden">
+                                            <fieldset style="width: 930px; margin-top: 5px; float: left;">
+                                                <legend>General Details</legend>
+                                                <div style="float: left; width: 150px;">
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label129" Text="Currency" />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label130" Text="Gross Hourly Rate" />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label131" Text="Gross Monthly Salary" />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label132" Text="Payment freq." />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label133" Text="Salary Effective Date" />
+                                                    </div>
+                                                </div>
+                                                <div style="float: left; width: 140px;">
+                                                    <div style="width: 120px; text-align: left; float: left; margin-right: 10px; height: 30px;">
+                                                        <telerik:RadComboBox runat="server" ID="RadComboBox6" Width="105px" />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: left; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:TextBox runat="server" ID="Label135" Width="100px" />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: left; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:TextBox runat="server" ID="Label136" Width="100px" />
+                                                    </div>
+                                                    <div style="width: 140px; text-align: left; float: left; margin-right: 10px; height: 30px;">
+                                                        <telerik:RadComboBox runat="server" ID="RadComboBox7" Width="130px" />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: left; float: left; margin-right: 10px; height: 30px;">
+                                                        <telerik:RadDatePicker runat="server" ID="RadDatePicker10" Width="130px" />
+                                                    </div>
+                                                </div>
+                                                <div style="float: left; width: 150px;">
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label134" Text="" />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label137" Text="" />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label138" Text="" />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label139" Text="Salary Grade" />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label140" Text="Wage Tax" />
+                                                    </div>
+                                                </div>
+                                                <div style="float: left; width: 150px;">
+                                                    <div style="width: 120px; text-align: left; float: left; margin-right: 10px; height: 30px;">
+                                                        <%--<telerik:RadComboBox runat="server" ID="RadComboBox8" Width="105px" />--%>
+                                                    </div>
+                                                    <div style="width: 120px; text-align: left; float: left; margin-right: 10px; height: 30px;">
+                                                        <%--<asp:TextBox runat="server" ID="TextBox60" Width="100px" />--%>
+                                                    </div>
+                                                    <div style="width: 120px; text-align: left; float: left; margin-right: 10px; height: 30px;">
+                                                        <%--<asp:TextBox runat="server" ID="TextBox61" Width="100px" />--%>
+                                                    </div>
+                                                    <div style="width: 140px; text-align: left; float: left; margin-right: 10px; height: 30px;">
+                                                        <telerik:RadComboBox runat="server" ID="RadComboBox9" Width="135px" />
+                                                    </div>
+                                                    <div style="width: 140px; text-align: left; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:TextBox runat="server" ID="TextBox62" Width="130px" />
+                                                    </div>
+                                                </div>
+                                                <div style="float: left; width: 150px;">
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label141" Text="Account No" />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label142" Text="IBAN" />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label143" Text="Bank Name" />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label144" Text="Swift Code" />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label145" Text="Payment Method" />
+                                                    </div>
+                                                </div>
+                                                <div style="float: left; width: 150px;">
+                                                    <div style="width: 150px; text-align: left; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:TextBox runat="server" ID="TextBox61" Width="150px" />
+                                                    </div>
+                                                    <div style="width: 150px; text-align: left; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:TextBox runat="server" ID="TextBox63" Width="150px" />
+                                                    </div>
+                                                    <div style="width: 150px; text-align: left; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:TextBox runat="server" ID="TextBox64" Width="150px" />
+                                                    </div>
+                                                    <div style="width: 150px; text-align: left; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:TextBox runat="server" ID="TextBox65" Width="150px" />
+                                                    </div>
+                                                    <div style="width: 150px; text-align: left; float: left; margin-right: 10px; height: 30px;">
+                                                        <telerik:RadComboBox runat="server" ID="RadComboBox8" Width="155px" />
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </telerik:RadPageView>
+                                        <telerik:RadPageView ID="RadPageView10" runat="server" Height="300" Style="overflow: hidden">
+                                            <fieldset style="width: 610px; margin-top: 5px; float: left;">
+                                                <legend>Allowance Details</legend>
+                                                <div style="float: left; width: 150px;">
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label146" Text="Monthly Mobile Limit" />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label147" Text="Monthly Conveyance" />
+                                                    </div>
+                                                </div>
+                                                <div style="float: left; width: 150px;">
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:TextBox runat="server" ID="Label148" width="100px" />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:TextBox runat="server" ID="Label149"  width="100px" />
+                                                    </div>
+                                                </div>
+                                                 <div style="float: left; width: 150px;">
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label150" Text="Special Allowance" />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label151" Text="Lunch Allowance" />
+                                                    </div>
+                                                    <div style="width: 150px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label152" Text="House Rent Allowance" />
+                                                    </div>
+                                                </div>
+                                                <div style="float: left; width: 150px;">
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:TextBox runat="server" ID="TextBox60" width="100px"  />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:TextBox runat="server" ID="TextBox66" width="100px"  />
+                                                    </div>
+                                                     <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:TextBox runat="server" ID="TextBox67" width="100px"  />
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                             <fieldset style="width: 300px; margin-top: 5px; float: left;">
+                                                <legend>Expact Info</legend>
+                                                <div style="float: left; width: 150px;">
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label153" Text="30% Rule Applicable" />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label155" Text="" />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label154" Text="30% Rule Start Date" />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: right; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:Label runat="server" ID="Label158" Text="30% Rule Start Date" />
+                                                    </div>
+                                                </div>
+                                                <div style="float: left; width: 150px;">
+                                                    <div style="width: 120px; text-align: left; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:RadioButton runat="server" ID="TextBox70" Text="Yes" /></div>
+                                                        <div style="width: 120px; text-align: left; float: left; margin-right: 10px; height: 30px;">
+                                                        <asp:RadioButton runat="server" ID="CheckBox4" Text="No" />
+                                                    </div>
+                                                    <div style="width: 120px; text-align: left; float: left; margin-right: 10px; height: 30px;">
+                                                        <telerik:RadDatePicker runat="server" ID="RadDatePicker12" Width="100px" />
+                                                    </div>
+                                                     <div style="width: 120px; text-align: left; float: left; margin-right: 10px; height: 30px;">
+                                                        <telerik:RadDatePicker runat="server" ID="RadDatePicker11" Width="100px" />
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </telerik:RadPageView>
+                                    </telerik:RadMultiPage>
+                                </div>
                             </div>
                         </telerik:RadPageView>
                         <telerik:RadPageView ID="RadPageView7" runat="server" Height="300" Style="overflow: hidden">
