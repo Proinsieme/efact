@@ -57,12 +57,17 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="Telerik.Web.UI, Version=2013.1.417.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+    <Reference Include="Telerik.Web.Design, Version=2013.2.717.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Telerik\RadControls for ASP.NET AJAX Q1 2013\Bin40\Telerik.Web.UI.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Telerik\RadControls for ASP.NET AJAX Q2 2013\Bin40\Telerik.Web.Design.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Web.UI.Skins">
-      <HintPath>C:\Program Files\Telerik\RadControls for ASP.NET AJAX Q1 2013\Bin40\Telerik.Web.UI.Skins.dll</HintPath>
+    <Reference Include="Telerik.Web.UI, Version=2013.2.717.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\RadControls for ASP.NET AJAX Q2 2013\Bin40\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins, Version=2013.2.717.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\RadControls for ASP.NET AJAX Q2 2013\Bin40\Telerik.Web.UI.Skins.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -71,7 +76,9 @@
     <Content Include="ChangePassword.aspx" />
     <Content Include="Content\Site.css" />
     <Content Include="efactModules.aspx" />
+    <Content Include="EmployeeAssessment.aspx" />
     <Content Include="EmployeeDetails.aspx" />
+    <Content Include="Home.aspx" />
     <Content Include="HumanResource.aspx" />
     <Content Include="Images\efact-HR.png" />
     <Content Include="Images\efact_logo.png" />
@@ -80,7 +87,34 @@
     <Content Include="Images\Icons\About.png" />
     <Content Include="Images\Icons\New.png" />
     <Content Include="Images\Icons\Save.png" />
+    <Content Include="Images\Icons\Select.png" />
     <Content Include="Images\loading.gif" />
+    <Content Include="Images\Menu Icons\About16.png" />
+    <Content Include="Images\Menu Icons\AddUser16.png" />
+    <Content Include="Images\Menu Icons\Approve.png" />
+    <Content Include="Images\Menu Icons\Approve16.png" />
+    <Content Include="Images\Menu Icons\Classify16.png" />
+    <Content Include="Images\Menu Icons\ClearUser16.png" />
+    <Content Include="Images\Menu Icons\DeleteHS.png" />
+    <Content Include="Images\Menu Icons\DeleteUser16.png" />
+    <Content Include="Images\Menu Icons\Exit.png" />
+    <Content Include="Images\Menu Icons\ExpenseProcesing16.png" />
+    <Content Include="Images\Menu Icons\Find.png" />
+    <Content Include="Images\Menu Icons\FixedAsset16.png" />
+    <Content Include="Images\Menu Icons\Invoice.png" />
+    <Content Include="Images\Menu Icons\ModifyUser16.png" />
+    <Content Include="Images\Menu Icons\New.png" />
+    <Content Include="Images\Menu Icons\Print.png" />
+    <Content Include="Images\Menu Icons\Recporting16.png" />
+    <Content Include="Images\Menu Icons\RedSpiral.PNG" />
+    <Content Include="Images\Menu Icons\Save.png" />
+    <Content Include="Images\Menu Icons\Security Management16.png" />
+    <Content Include="Images\Menu Icons\Services16.png" />
+    <Content Include="Images\Menu Icons\Setting16.png" />
+    <Content Include="Images\Menu Icons\SoftwareUpdate16.png" />
+    <Content Include="Images\Menu Icons\StandingInstruction16.png" />
+    <Content Include="Images\Menu Icons\Suppliers16.png" />
+    <Content Include="Images\Menu Icons\UserProfile16.png" />
     <Content Include="Images\menu_box.png" />
     <Content Include="Images\Modules\Budget.png" />
     <Content Include="Images\Modules\Creditor Invoice Processing.png" />
@@ -102,7 +136,9 @@
     <Content Include="Test.aspx" />
     <Content Include="TreeView.aspx" />
     <Content Include="UnAuthorized.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActiviesandAttentions.aspx.cs">
@@ -140,12 +176,26 @@
     <Compile Include="efactModules.aspx.designer.cs">
       <DependentUpon>efactModules.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeAssessment.aspx.cs">
+      <DependentUpon>EmployeeAssessment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeAssessment.aspx.designer.cs">
+      <DependentUpon>EmployeeAssessment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeDetails.aspx.cs">
       <DependentUpon>EmployeeDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="EmployeeDetails.aspx.designer.cs">
       <DependentUpon>EmployeeDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="HRM.Master.cs">
       <DependentUpon>HRM.Master</DependentUpon>
@@ -231,7 +281,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseAjaxifiedTemplates="False" UseJQuerySupport="False" />
+      <UserProperties UseJQuerySupport="False" UseAjaxifiedTemplates="False" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

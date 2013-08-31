@@ -19,7 +19,7 @@
 
 #header
 {
-    width: 1000px;
+    width: 1170px;
     min-height: 20px;
     padding: 15px 15px 15px;
     margin: 0 auto;
@@ -34,7 +34,7 @@
 
 #main
 {
-    width: 1000px;
+    width: 1170px;
     margin: 0 auto;
     padding: 0 0px;
     overflow: hidden;
@@ -48,7 +48,7 @@
 
 #footer
 {
-    width: 780px;
+    width: 1170px;
     margin: 0 auto;
     padding: 20px 20px;
     text-align: center;
@@ -216,7 +216,7 @@ moduleImg
 {
     flex-align: center;
     margin: 50px;
-    background-color: aquamarine;
+    background-color: blueviolet;
 }
 
 .section
@@ -375,8 +375,8 @@ moduleImg
 .hrContentContainer
 {
     padding: 0;
-    margin: 0 auto;
-    width: 1000px;
+    margin: 0;
+    width: 800px;
 }
 
 .hrMenuContainer
@@ -391,7 +391,7 @@ moduleImg
     width: 1000px;
 }
 
-/*
+
 .hrSlideBar
 {
     padding: 0;
@@ -400,7 +400,7 @@ moduleImg
     margin-top: 20px;
     color: darkblue;
 }
-*/
+
 .hrSlideBar .gadget
 {
     margin: 0;
@@ -498,7 +498,7 @@ ul.sb_menu li a:hover
 
 #container
 {
-    background-color: #0ff;
+    background-color: white;
     float: left;
     width: 100%;
     border-left: 150px solid #0f0;
@@ -559,7 +559,7 @@ ul.sb_menu li a:hover
 }
 .generalTag
 {
-    width: 750px;
+    width: 730px;
     float: left;
     height: 30px;
     vertical-align: middle;
@@ -582,7 +582,8 @@ ul.sb_menu li a:hover
 div#MegaDropDown
 {
     margin: 0;
-    padding: 20px 0 0 0;
+    padding: 0px;
+    /*height:30px;*/
    /* width: 880px;
     height: 352px;
     background-image: url('Img/main_back.jpg');

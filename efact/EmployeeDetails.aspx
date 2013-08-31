@@ -2,12 +2,15 @@
     CodeBehind="EmployeeDetails.aspx.cs" Inherits="efact.EmployeeDetails" %>
 
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <span>
         <img src="Images/efact-HR.png" />
     </span>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script src="Scripts/jquery-1.7.1.min.js"></script>
     <div class="hrContentContainer">
         <%-- <div class="hrContentBlock">
             <div id="emmployeedetails">
@@ -179,7 +182,7 @@
             <fieldset style="width: 975px; margin-top: 10px;">
                 <legend>Employee Details</legend>
                 <div>
-                    <telerik:RadTabStrip ID="TabStrip1" runat="server" Skin="Simple" MultiPageID="RadMultiPag1"
+                    <telerik:RadTabStrip ID="TabStrip1" runat="server"  MultiPageID="RadMultiPag1"
                         SelectedIndex="1" Font-Names="Calibri" Font-Size="Small" Width="975px" Align="Left">
                         <Tabs>
                             <telerik:RadTab Text="Employment">
@@ -581,7 +584,7 @@
                         <telerik:RadPageView ID="RadPageView5" runat="server" Height="300" Style="overflow: hidden">
                             <div class="tag">
                                 <div style="margin-top: 10px;">
-                                    <telerik:RadTabStrip ID="RadTabStrip2" runat="server" Skin="Simple" MultiPageID="RadMultiPag2"
+                                    <telerik:RadTabStrip ID="RadTabStrip2" runat="server"  MultiPageID="RadMultiPag2"
                                         SelectedIndex="0" Font-Names="Calibri" Font-Size="Small" Width="975px" Align="Left">
                                         <Tabs>
                                             <telerik:RadTab Text="Identification Details">
@@ -914,7 +917,7 @@
                         <telerik:RadPageView ID="RadPageView6" runat="server" Height="300" Style="overflow: hidden">
                             <div class="tag">
                                 <div style="margin-top: 10px;">
-                                    <telerik:RadTabStrip ID="RadTabStrip3" runat="server" Skin="Simple" MultiPageID="RadMultiPag3"
+                                    <telerik:RadTabStrip ID="RadTabStrip3" runat="server"  MultiPageID="RadMultiPag3"
                                         SelectedIndex="0" Font-Names="Calibri" Font-Size="Small" Width="975px" Align="Left">
                                         <Tabs>
                                             <telerik:RadTab Text="Salary Details">

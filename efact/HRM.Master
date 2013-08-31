@@ -14,6 +14,7 @@
     </div>
 </head>
 <body>
+   
     <script type="text/javascript">
         //<!--
         function onClientContextMenuShowing(sender, args) {
@@ -22,6 +23,8 @@
             //enable/disable menu items
             setMenuItemsState(args.get_menu().get_items(), treeNode);
         }
+
+       
 
         function onClientContextMenuItemClicking(sender, args) {
             var menuItem = args.get_menuItem();
@@ -124,8 +127,8 @@
             <div class="hrContentContainer">
                 <div class="hrMenuContainer">
                     <div id="MegaDropDown">
-                        <telerik:RadMenu runat="server" ID="RadMenu1" Skin="Sitefinity" OnClientItemOpened="itemOpened"
-                            Width="880" Height="40" EnableShadows="true">
+                        <telerik:RadMenu runat="server" ID="RadMenu1" Skin="Default" OnClientItemOpened="itemOpened"
+                            Width="880" Height="30" EnableShadows="true" style="top: 0px; left: 0px">
                             <Items>
                                 <telerik:RadMenuItem Text="Human Resource" PostBack="false">
                                     <Items>
@@ -134,7 +137,7 @@
                                                 <div id="CatWrapper" class="Wrapper" style="width: 435px;">
                                                     <h3>
                                                         Human Resource</h3>
-                                                    <telerik:RadSiteMap ID="RadSiteMap1" runat="server" Skin="Hay" EnableTextHTMLEncoding="true">
+                                                    <telerik:RadSiteMap ID="RadSiteMap1" runat="server"  EnableTextHTMLEncoding="true">
                                                         <LevelSettings>
                                                             <telerik:SiteMapLevelSetting Level="0">
                                                                 <ListLayout RepeatColumns="3" RepeatDirection="Vertical" />

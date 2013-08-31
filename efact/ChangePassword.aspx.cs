@@ -38,6 +38,7 @@ namespace efact
             if (VerifyPassword())
             {
                 objLogin.SaveUserPassword(ConfigurationManager.AppSettings["GlbUserId"], ConfirmNewPassword.Text);
+                Response.Redirect("efactModules.aspx");
             }
         }
 

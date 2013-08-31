@@ -8,7 +8,7 @@
 
         <div id="home" class="section">
                 <ul id="module_menu">
-                    <li><a href="ActiviesandAttentions.aspx" class="humanResource"><span style="">Human Resource</span></a></li>
+                    <li><a href="Home.aspx" class="humanResource"><span style="">Human Resource</span></a></li>
                     <li><a href="#services" class="budget"><span>Budget</span></a></li>
                     <li><a href="#portfolio" class="invoice"><span>Invoice Processing</span></a></li>
                     <li><a href="#contact" class="expense"><span>Expense</span></a></li>
